@@ -1,0 +1,133 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .todo {
+    width: 300px;
+
+    .header {
+      width: 100%;
+
+      input {
+        width: calc(100% - 22px);
+        height: 40px;
+        padding: 0 10px;
+        border: solid 1px #cccccc;
+        border-radius: 4px 4px 0 0;
+      }
+    }
+
+    .list {
+      width: calc(100% - 2px);
+      padding: 0;
+      border: 1px solid #cccccc;
+      border-width: 0 1px 1px 1px;
+      min-height: 60px;
+      display: block;
+      background: white;
+      overflow: hidden;
+      margin: 0;
+
+      .item {
+        padding: 15px 10px;
+        border-bottom: solid 1px #cccccc;
+        color: rgba(0, 0, 0, 0.87);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        cursor: move;
+        background: white;
+        font-size: 14px;
+
+        &:last-child {
+          border: none;
+        }
+
+        &:not(.cdk-drag-placeholder) {
+          transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+        }
+
+        .item-container {
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+
+          .item-label {
+            display: flex;
+            align-items: center;
+
+            label {
+              margin-left: 10px;
+              font-size: 18px;
+            }
+
+            .complete {
+              color: #909090;
+              font-style: italic;
+              text-decoration: line-through;
+            }
+          }
+
+          button {
+            cursor: pointer;
+            border-radius: 5px;
+
+            i {
+              margin: 8px 4px 7px 4px;
+            }
+
+            &:last-child {
+              margin-left: 7.5px;
+            }
+
+            &:focus, &:active {
+              outline: none;
+            }
+          }
+        }
+      }
+
+      .no-item {
+        padding: 5px 8px;
+      }
+
+      .cdk-drag-preview {
+        box-sizing: border-box;
+        border-radius: 4px;
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+      }
+
+      .cdk-drag-placeholder {
+        opacity: 0;
+      }
+
+      .cdk-drag-animating {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+      }
+
+    }
+  }
+
+  .footer {
+    padding: 15px 10px;
+    border: 1px solid #cccccc;
+    border-width: 0 1px 1px 1px;
+    border-radius:  0 0 4px 4px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
